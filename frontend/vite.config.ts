@@ -9,13 +9,13 @@ export default defineConfig({
       '@': resolve(__dirname, 'src')   // 把 @ 指向 src
     }
   },
-  server: {
-    proxy: {
-      '/api': {
-        target: 'http://localhost:8000',
-        changeOrigin: true,
-        rewrite: path => path.replace(/^\/api/, '')
-      }
+server: {
+  proxy: {
+    '/api': {
+      target: 'https://dorm-repair-backend.onrender.com',
+      changeOrigin: true,
+      rewrite: path => path.replace(/^\/api/, '')
     }
   }
+}
 })
